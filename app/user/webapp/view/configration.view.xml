@@ -49,9 +49,10 @@
                 <Panel
                     id="grouppannel"
                     headerText="Groups Configurations"
-                    class="box"
-                    visible="false"
-                    width="97%"
+
+                     class="box customPanelHeader"
+    visible="false"
+    width="97%"
                 >
                     <f:SimpleForm
                         id="GenSimpleForm"

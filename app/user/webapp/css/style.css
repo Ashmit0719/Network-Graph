@@ -58,3 +58,6 @@
 .customSelectMargin {
     margin-left: 65px; /* Adjust the value as needed */
 }
+.customPanelHeader .sapMPanelHdr {
+    font-size: 20px;
+}
