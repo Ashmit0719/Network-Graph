@@ -49,10 +49,9 @@
                 <Panel
                     id="grouppannel"
                     headerText="Groups Configurations"
-
-                     class="box customPanelHeader"
-    visible="false"
-    width="97%"
+                    class="box customPanelHeader"
+                    visible="false"
+                    width="97%"
                 >
                     <f:SimpleForm
                         id="GenSimpleForm"
@@ -99,7 +98,7 @@
                                         id="groupIconInput"
                                         width="177px"
                                         items="{
-                                        path: 'myModel>/comboBoxData1/items'}" 
+                                        path: 'myModel>/comboBoxData1/items'}"
                                         selectedKey="{myModel>/comboBoxData1/selectedKey}"
                                         class="sapUiSmallMarginBottom groupicon"
                                     >
