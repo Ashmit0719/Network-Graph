@@ -1,0 +1,60 @@
+/* Enter your custom styles here */
+.iconAlign{
+    padding-left: 49px;
+    width: 242px;
+
+}
+.statusAlign{
+    padding-left: 36px;
+    width: 229px;
+}
+.shapeAlign{
+    padding-left: 52px;
+    width: 245px;
+}
+.groupkey{
+    padding-left: 29.5px;
+}
+.groupicon{
+    margin-left: 26px;
+    
+
+}
+.groupstatus{
+    padding-left: 13px;
+    width: 190px;
+
+}
+
+/* .centerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+} */
+.groupname{
+    padding-left: 16px;
+    width: 190px;
+}
+
+.boldText {
+    font-weight: bold;
+    color: inherit;
+}
+.customButton {
+    width: 100px; 
+    height: 50px; 
+    font-size: 16px;
+}
+
+
+.box {
+   
+    border-radius: 20px;  /* Make the edges curved */
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1); /* 2px border shadow */
+    margin-left: 20px;
+    
+}
+.customSelectMargin {
+    margin-left: 65px; /* Adjust the value as needed */
+}

@@ -1,0 +1,478 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    controllerName="app.user.controller.configration"
+    busyIndicatorDelay="0"
+    height="100%"
+    displayBlock="true"
+>
+    <Page
+        showHeader="false"
+        id="page"
+    >
+        <content>
+            <VBox
+                id="_IDGenVBox1"
+                class="sapUiSmallMargin VBox container"
+            >
+                <HBox
+                    id="_IDGenHBox1"
+                    class="sapUiSmallMarginBottom"
+                >
+                    <Button
+                        type="Emphasized"
+                        id="_IDGenButton10"
+                        press="onPressGroups"
+                        text="Groups"
+                        tooltip="Groups Name"
+                        class="sapUiSmallMarginBegin sapUiSmallMarginTop"
+                    />
+                    <Button
+                        type="Emphasized"
+                        id="_IDGenButton20"
+                        press="onPressNodes"
+                        text="Nodes"
+                        class="sapUiSmallMarginBegin sapUiSmallMarginTop"
+                    />
+                    <Button
+                        type="Emphasized"
+                        id="Connections"
+                        text="Connections"
+                        press="onPressConnections"
+                        class="sapUiSmallMarginBegin sapUiSmallMarginTop"
+                    />
+                </HBox>
+
+                <!-- Groups Panel -->
+                <Panel
+                    id="grouppannel"
+                    headerText="Groups Configurations"
+                    class="box"
+                    visible="false"
+                    width="97%"
+                >
+                    <f:SimpleForm
+                        id="GenSimpleForm"
+                        layout="ResponsiveGridLayout"
+                    >
+                        <f:content>
+                            <VBox
+                                id="groupsVBox"
+                                visible="false"
+                            >
+                                <HBox id="_IDGenHBox2">
+                                    <Label
+                                        id="_IDGenTitle1"
+                                        text="Group Name"
+                                        class=" sapUiSmallMarginBottom sapUiSmallMarginBegin boldText"
+                                    />
+
+                                    <Input
+                                        id="groupNameInput"
+                                        placeholder="Group Name"
+                                        class=" sapUiSmallMarginBottom groupname"
+                                    />
+                                </HBox>
+                                <HBox id="_IDGenHBox4">
+                                    <Label
+                                        id="_IDGenTitle2"
+                                        text="Group Key"
+                                        class=" sapUiSmallMarginBottom sapUiSmallMarginBegin boldText"
+                                    />
+
+                                    <Input
+                                        id="groupKeyInput"
+                                        placeholder="Group Key"
+                                        class="sapUiSmallMarginBottom groupkey"
+                                    />
+                                </HBox>
+                                <HBox id="_IDGenHBox6">
+                                    <Label
+                                        id="_IDGenTitle3"
+                                        text="Group Icon"
+                                        class=" sapUiSmallMarginBottom sapUiSmallMarginBegin boldText "
+                                    />
+                                    <Select
+                                        id="groupIconInput"
+                                        width="177px"
+                                        items="{
+                                        path: 'myModel>/comboBoxData1/items'}" 
+                                        selectedKey="{myModel>/comboBoxData1/selectedKey}"
+                                        class="sapUiSmallMarginBottom groupicon"
+                                    >
+                                        <core:ListItem
+                                            id="_IDGenListItem1"
+                                            key="{myModel>key}"
+                                            text="{myModel>text}"
+                                            icon="{myModel>icon}"
+                                        />
+                                    </Select>
+                                </HBox>
+
+                                <HBox id="_IDGenHBox8">
+                                    <Label
+                                        id="_IDGenTitle4"
+                                        text="Group Status"
+                                        class=" sapUiSmallMarginBottom sapUiSmallMarginBegin boldText "
+                                    />
+
+                                    <ComboBox
+                                        id="groupStatusInput"
+                                        class=" sapUiSmallMarginBottom groupstatus"
+                                        placeholder="Select Status"
+                                    >
+                                        <core:Item
+                                            id="_IDGenItem10"
+                                            key="Circle"
+                                            text="CustomYellow"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem11"
+                                            key="Box"
+                                            text="CustomLightGrey"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem12"
+                                            key="Box"
+                                            text="CustomGrey"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem13"
+                                            key="Box"
+                                            text="CustomPink"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem14"
+                                            key="Box"
+                                            text="CustomRed"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem15"
+                                            key="Box"
+                                            text="CustomBlue"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem20"
+                                            key="Box"
+                                            text="CustomGreen"
+                                        />
+                                    </ComboBox>
+                                </HBox>
+                                <HBox id="_IDGenHBox10">
+                                    <Button
+                                        type="Reject"
+                                        id="_IDGenButton51"
+                                        text="Clear"
+                                        press="onPressGroupDelete"
+                                        class=" sapUiSmallMarginBottom sapUiSmallMarginBegin customButton"
+                                    />
+                                    <Button
+                                        type="Accept"
+                                        id="_IDGenButton41"
+                                        text="Save"
+                                        press="onPressGroupSave"
+                                        class=" sapUiSmallMarginBottom sapUiSmallMarginBegin customButton"
+                                    />
+                                </HBox>
+                            </VBox>
+                        </f:content>
+                    </f:SimpleForm>
+                </Panel>
+
+                <!-- Nodes Panel -->
+                <Panel
+                    id="nodesPanel"
+                    headerText="Nodes Configurations"
+                    class="box"
+                    visible="false"
+                    width="97%"
+                >
+                    <f:SimpleForm
+                        id="_IDGenSimpleFormNodes"
+                        layout="ResponsiveGridLayout"
+                    >
+                        <f:content>
+                            <VBox
+                                id="nodesVBox"
+                                visible="false"
+                            >
+                                <HBox id="_IDGenHBox25">
+                                    <Label
+                                        id="_IDGenTitle41"
+                                        text="Group Name"
+                                        class="sapUiSmallMarginBegin boldText"
+                                    />
+                                </HBox>
+                                <RadioButtonGroup
+                                    id="enableRadioGroup"
+                                    columns="2"
+                                    selectedIndex="-1"
+                                    select="onRadioSelect"
+                                >
+                                    <RadioButton
+                                        id="radioYes"
+                                        text="Yes"
+                                        class="sapUiSmallMarginBegin"
+                                    />
+                                    <RadioButton
+                                        id="radioNo"
+                                        text="No"
+                                        class="sapUiSmallMarginBegin"
+                                    />
+                                </RadioButtonGroup>
+                                <VBox
+                                    id="groupNameVBox"
+                                    visible="{myModel>/groupNameVisible}"
+                                >
+                                    <Label
+                                        id="_IDGenTitle42"
+                                        text="Select group"
+                                        class="sapUiSmallMarginBegin sapUiSmallMarginTop boldText"
+                                    />
+                                    <ComboBox
+                                        id="groupComboBox"
+                                        items="{/Groups}"
+                                        class="sapUiSmallMarginBegin p"
+                                    >
+                                        <core:Item
+                                            id="_IDGenItem8"
+                                            key="{groupTitle}"
+                                            text="{groupTitle}"
+                                        />
+                                    </ComboBox>
+                                </VBox>
+                                <HBox id="_IDGenHBox50">
+                                    <Label
+                                        id="_IDGenLabel3"
+                                        text="Node Name"
+                                        labelFor="nodeNameInput"
+                                        class="sapUiSmallMarginBegin sapUiSmallMarginTop boldText"
+                                    />
+                                    <Input
+                                        id="nodeNameInput"
+                                        placeholder="Node Name"
+                                        class="sapUiSmallMarginTop sapUiSmallMarginBegin"
+                                    />
+                                </HBox>
+
+                                <HBox id="_IDGenHBox60">
+                                    <Label
+                                        id="_IDGenLabel4"
+                                        text="Shape"
+                                        labelFor="shapeSelect"
+                                        class="sapUiSmallMarginBegin boldText"
+                                    />
+                                    <ComboBox
+                                        id="shapeSelect"
+                                        class="shapeAlign"
+                                        placeholder="Select Shape"
+                                    >
+                                        <core:Item
+                                            id="_IDGenItem1"
+                                            key="Circle"
+                                            text="Circle"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem2"
+                                            key="Box"
+                                            text="Box"
+                                        />
+                                    </ComboBox>
+                                </HBox>
+                                <HBox id="_IDGenHBox70">
+                                    <Label
+                                        id="_IDGenLabel5"
+                                        text="Icon"
+                                        labelFor="iconInput"
+                                        class="sapUiSmallMarginBegin boldText"
+                                    />
+
+                                    <Select
+                                        id="iconInput"
+                                        width="193px"
+                                        items="{
+                                               path: 'myModel>/comboBoxData2/items'
+                                                      }"
+                                        selectedKey="{myModel>/comboBoxData2/selectedKey}"
+                                        class=" customSelectMargin"
+                                    >
+                                        <core:ListItem
+                                            id="_IDGenListItem2"
+                                            key="{myModel>key}"
+                                            text="{myModel>text}"
+                                            icon="{myModel>icon}"
+                                        />
+                                    </Select>
+                                </HBox>
+                                <HBox id="_IDGenHBox80">
+                                    <Label
+                                        id="_IDGenLabel6"
+                                        text="Status"
+                                        labelFor="statusInput"
+                                        class="sapUiSmallMarginBegin boldText"
+                                    />
+                                    <ComboBox
+                                        id="statusInput"
+                                        class="sapUiSmallMarginBegin sapUiSmallMarginBottom statusAlign"
+                                        placeholder="Status"
+                                    >
+                                        <core:Item
+                                            id="_IDGenItem21"
+                                            key="CustomYellow"
+                                            text="CustomYellow"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem22"
+                                            key="CustomLightGrey"
+                                            text="CustomLightGrey"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem23"
+                                            key="CustomGrey"
+                                            text="CustomGrey"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem24"
+                                            key="CustomPink"
+                                            text="CustomPink"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem25"
+                                            key="CustomRed"
+                                            text="CustomRed"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem26"
+                                            key="CustomBlue"
+                                            text="CustomBlue"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem27"
+                                            key="CustomGreen"
+                                            text="CustomGreen"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem28"
+                                            key="CustomLightBlue"
+                                            text="CustomLightBlue"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem29"
+                                            key="CustomLightGreen"
+                                            text="CustomLightGreen"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem30"
+                                            key="CustomWhite"
+                                            text="CustomWhite"
+                                        />
+                                        <core:Item
+                                            id="_IDGenItem31"
+                                            key="Warning"
+                                            text="Warning"
+                                        />
+                                    </ComboBox>
+                                </HBox>
+                                <HBox id="_IDGenHBox22">
+                                    <Button
+                                        type="Reject"
+                                        id="_IDGenButton59"
+                                        text="Clear"
+                                        press="onNodeDialogDelete"
+                                        class="sapUiSmallMarginBottom sapUiSmallMarginBegin customButton"
+                                    />
+                                    <Button
+                                        type="Accept"
+                                        id="_IDGenButton42"
+                                        text="Save"
+                                        press="onNodeDialogSave"
+                                        class="sapUiSmallMarginBegin sapUiSmallMarginBottom customButton"
+                                    />
+                                </HBox>
+                            </VBox>
+                        </f:content>
+                    </f:SimpleForm>
+                </Panel>
+
+                <!-- Connections Panel -->
+                <Panel
+                    id="connectionsPanel"
+                    headerText="Connections Configurations"
+                    visible="false"
+                    class="box"
+                    width="97%"
+                >
+                    <f:SimpleForm
+                        id="_IDGenSimpleFormConnections"
+                        layout="ResponsiveGridLayout"
+                    >
+                        <f:content>
+                            <VBox
+                                id="connectionsVBox"
+                                visible="false"
+                            >
+                                <HBox id="_IDGenHBox17">
+                                    <Title
+                                        id="_IDGenTitle7"
+                                        level="H3"
+                                        text="From"
+                                        class="sapUiSmallMarginTop sapUiSmallMarginBegin"
+                                    />
+                                </HBox>
+                                <ComboBox
+                                    id="_IDGenComboBox1"
+                                    items="{/Nodes}"
+                                    class="sapUiSmallMarginBottom sapUiSmallMarginBegin"
+                                >
+                                    <core:Item
+                                        id="_IDGenItem4"
+                                        key="{nodeTitle}"
+                                        text="{nodeTitle}"
+                                    />
+                                </ComboBox>
+                                <HBox id="_IDGenHBox18">
+                                    <Title
+                                        id="_IDGenTitle8"
+                                        level="H3"
+                                        text="To"
+                                        class="sapUiSmallMarginTop sapUiSmallMarginBegin"
+                                    />
+                                </HBox>
+                                <ComboBox
+                                    id="_IDGenComboBox2"
+                                    items="{/Nodes}"
+                                    class="sapUiSmallMarginBottom sapUiSmallMarginBegin"
+                                >
+                                    <core:Item
+                                        id="_IDGenItem5"
+                                        key="{nodeTitle}"
+                                        text="{nodeTitle}"
+                                    />
+                                </ComboBox>
+                                <HBox id="_IDGenHBox19">
+                                    <Button
+                                        type="Reject"
+                                        id="_IDGenButton49"
+                                        text="Clear"
+                                        press="onDialogDelete"
+                                        class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiSmallMarginBegin customButton"
+                                    />
+
+                                    <Button
+                                        type="Accept"
+                                        id="_IDGenButton43"
+                                        text="Save"
+                                        press="onDialogOk"
+                                        class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiSmallMarginBegin customButton"
+                                    />
+                                </HBox>
+                            </VBox>
+                        </f:content>
+                    </f:SimpleForm>
+                </Panel>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
